@@ -4,14 +4,14 @@ Below you will find a brief description on how to use the telomere detection alg
 ```telomere_detection.py long_reads.fasta -k 4 -K 20 -l 2000 -n 40```
 
 ## Background
-The motivation for this algorithm was initially to identify the telomeric repeats of _Diploscapter pachys_ and _Diploscapter coronatus_. These two species were sequenced using Nanopore and PacBio. We reasoned that if the genomic reads were not intentionally sheared, telomeres could be captured at the 5' and the 3' ends of reads. Furthermore, if Diploscapter had conventional telomeres maintained by a functional telomerase, these telomeric repeats would satisfy at least three conditions usually observed for conventional telomeres:
+The motivation for this algorithm was initially to identify the telomeric repeats of _Diploscapter pachys_ and _Diploscapter coronatus_. These two species were sequenced using Nanopore and PacBio. We reasoned that if the genomic reads were not intentionally sheared, telomeres could be captured at the 5' and the 3' ends of reads. Furthermore, if _Diploscapter_ had conventional telomeres maintained by a functional telomerase, these telomeric repeats would satisfy at least three conditions usually observed for conventional telomeres:
 1. Tandem repeats - they would consist of tandemly repeating sequences (due to telomerase action)
 2. Stranded occupancy - clusters of telomeric repeats and their reverse complement would be found at the 3’ and 5’ ends of reads, respectively, and
 3. Log-normal occupancy - the occupancy pattern of the repeats over length would resemble an inverted log-normal cumulative curve, which reflects a naturally log-normal distribution of telomere lengths.
 
 Thus, the telomeric repeat pattern can be found by first identifying the most frequent repeat patterns at the ends of the reads, followed by the elimination of patterns that do not satisfy the 3 conditions above.
 
-The bulk of the code was written starting 2020 and revised bit by bit through 2023.
+The bulk of the code was written starting 2020 and revised bit by bit through 2023. We have tested this code on long reads derived from _Diploscapter_, _Caenorhabditis_ and _Meloidogyne_ nematodes.
 
 ## How the algorithm works
 Much of our algorithm depends on the TideHunter program written by [Yan Gao, Bo Liu, Yadong Wang, and Yi Xing (Gao & al. 2019 _Bioinformatics_)](https://academic.oup.com/bioinformatics/article/35/14/i200/5529224). Our algorithm first takes a collection of long reads (from Oxford Nanopore or PacBio sequencing platforms) and partitions each read into two - the first 1000 bps and the last 1000 bps. TideHunter is run on these partitions to detect any tandem repeats of length ```k```. Next, our algorithm reads the TideHunter output and ranks the repeated sequences together with their reverse complements based on occupancy (saved as *_TideHunter_parser_OUTPUT_CONDENSED.txt). This ranking step also merges repeat sequences that are circularly permuted (repeats of ATCG are considered the same class as repeats of TCGA, CGAT and GATC).
