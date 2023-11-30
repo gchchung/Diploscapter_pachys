@@ -14,13 +14,14 @@ Thus, the telomeric repeat pattern can be found by first identifying the most fr
 The bulk of the code was written starting 2020 and revised bit by bit through 2023.
 
 ## How the algorithm works
-Much of our algorithm depends on the TideHunter program written by Yan Gao, Bo Liu, Yadong Wang, and Yi Xing (Gao & al. 2019 _Bioinformatics_). Our algorithm first takes a collection of long reads (from Oxford Nanopore or PacBio sequencing platforms) and partitions each read into two - the first 1000 bps and the last 1000 bps. TideHunter is run on these partitions to detect any tandem repeats of length ```k```. Next, our algorithm reads the TideHunter output and ranks the repeated sequences together with their reverse complements based on occupancy (saved as *_TideHunter_parser_OUTPUT_CONDENSED.txt). This ranking step also merges repeat sequences that are circularly permuted (repeats of ATCG are considered the same class as repeats of TCGA, CGAT and GATC).
+Much of our algorithm depends on the TideHunter program written by [Yan Gao, Bo Liu, Yadong Wang, and Yi Xing (Gao & al. 2019 _Bioinformatics_)](https://academic.oup.com/bioinformatics/article/35/14/i200/5529224). Our algorithm first takes a collection of long reads (from Oxford Nanopore or PacBio sequencing platforms) and partitions each read into two - the first 1000 bps and the last 1000 bps. TideHunter is run on these partitions to detect any tandem repeats of length ```k```. Next, our algorithm reads the TideHunter output and ranks the repeated sequences together with their reverse complements based on occupancy (saved as *_TideHunter_parser_OUTPUT_CONDENSED.txt). This ranking step also merges repeat sequences that are circularly permuted (repeats of ATCG are considered the same class as repeats of TCGA, CGAT and GATC).
 
-To graph the most frequently occurring repeats at the ends of long reads, our algorithm runs TideHunter again on full-length reads and parses through the output. Only the top ```n``` repeat patterns represented in the first and last 1000 bps of reads are considered. The user provides a length window ```l``` for which occupancies will be graphed - the value of ```l``` should be determined by trial and error to fully cover the lengths of telomeres (we found that 2000 bps were sufficient for _Diploscapter_ telomeres, while _Caenorhabditis_ telomeres required at least 6000 bps). Finally, our algorithm captures the occupancy patterns in the first ```l``` bps, last ```l``` bps and the middle of all reads longer than ```2*l```, then graphs these patterns.
+To graph the most frequently occurring repeats at the ends of long reads, our algorithm runs TideHunter again on full-length reads and parses through the output. Only the top ```n``` repeat patterns represented in the first and last 1000 bps of reads are considered. The user provides a length window ```l``` for which occupancies will be graphed - Finally, our algorithm captures the occupancy patterns in the first ```l``` bps, last ```l``` bps and the middle of all reads longer than ```2*l```, then graphs these patterns.
 
 Finally, the user should scan the graphed occupancy patterns to determine if the stranded occupancy and log-normal occupancy can be observed for any pattern - these should be noted and tested further (eg. by FISH).
 
-## Requirements
+## Getting started
+### Prerequisites
 The script is written in Python 3. Required packages include:
 - BioPython (I/O of sequence files)
 - PIL (for graph png output) 
@@ -29,7 +30,11 @@ The script is written in Python 3. Required packages include:
 - kaleido
 
 In addition, TideHunter v1.4.2 should be installed in the $PATH. Later versions of TideHunter may produce an ouptut whose column orders are not the same.
-- TideHunter v1.4.2
+- [TideHunter v1.4.2](https://github.com/yangao07/TideHunter/releases)
 
-## Usage
+### Usage
 
+
+### Required arguments
+-
+ the value of ```l``` should be determined by trial and error to fully cover the lengths of telomeres (we found that 2000 bps were sufficient for _Diploscapter_ telomeres, while _Caenorhabditis_ telomeres required at least 6000 bps).
