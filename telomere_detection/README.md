@@ -32,7 +32,8 @@ The script is written in Python 3. Required packages include:
 In addition, TideHunter v1.4.2 should be installed in the $PATH. Later versions of TideHunter may produce an ouptut whose column orders are not the same.
 - [TideHunter v1.4.2](https://github.com/yangao07/TideHunter/releases)
 
-### Example usage
+### Usage
+To generate occupancy graphs, covering the first and last 2000 nucleotides, for the top 40 most frequently occurring 4-mer to 20-mer terminal repeats in ```long_reads.fasta```
 ```telomere_detection.py long_reads.fasta -k 4 -K 20 -l 2000 -n 40```
 
 required arguments below:
@@ -43,6 +44,8 @@ required arguments below:
 | ```-K```   | largest repeat period (in bps) to consider |
 | ```-l```   | the window for graphing the occupancy of the repeat patterns. The value of ```l``` should be determined by trial and error to fully cover the lengths of telomeres: we found that 2000 bps were sufficient for _Diploscapter_ telomeres, while _Caenorhabditis_ telomeres required at least 6000 bps. |
 | ```-n```   | graph only the top ```n``` most frequently occurring repeats in the beginnings and ends of reads.|
+
+To generate the occupancy graph for a single type of repeat
 
 ## References
 Chung _& al._ (2024) manuscript in preparation.
