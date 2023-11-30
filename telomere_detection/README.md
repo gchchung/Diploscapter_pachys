@@ -24,7 +24,7 @@ Finally, the user should scan the graphed occupancy patterns to determine if the
 ### Prerequisites
 The script is written in Python 3. Required packages include:
 - [BioPython](https://biopython.org/wiki/Download) (I/O of sequence files)
-- [PIL](https://pypi.org/project/Pillow/) (for graph .png output) 
+- [pillow](https://pypi.org/project/Pillow/) (for graph .png output) 
 - [svgutils](https://pypi.org/project/svgutils/) (for graph .svg output)
 - [plotly](https://plotly.com/python/getting-started/) (for graphing)
 - [kaleido](https://pypi.org/project/kaleido/) (for plotly graphs)
