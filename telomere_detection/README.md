@@ -1,8 +1,10 @@
 # Novel telomere detection algorithm using TideHunter
 Below you will find a brief description on how to use the telomere detection algorithm.
 
+## Usage
+
 ## Background
-The motivation for this algorithm was initially to identify the telomeric repeats of _Diploscapter pachys_ and _Diploscapter coronatus_. Previously published assemblies of these two organisms did not contain contigs that terminate in TTAGGC (3' end) or begin with GCCTAA (5'end), the canonical nematode telomeric repeats. These two species were subsequently re-sequenced using Nanopore and PacBio. We reasoned that if the genomic reads were not intentionally sheared, telomeres could be captured at the 5' and the 3' ends of reads. Furthermore, if Diploscapter had conventional telomeres maintained by a functional telomerase, these telomeric repeats would satisfy at least three conditions usually observed for conventional telomeres:
+The motivation for this algorithm was initially to identify the telomeric repeats of _Diploscapter pachys_ and _Diploscapter coronatus_. Previously published assemblies of these two organisms did not contain contigs that terminate in repeated clusters of TTAGGC (3' end) or begin with clusters GCCTAA (5'end), the canonical nematode telomeric repeats. These two species were subsequently re-sequenced using Nanopore and PacBio. We reasoned that if the genomic reads were not intentionally sheared, telomeres could be captured at the 5' and the 3' ends of reads. Furthermore, if Diploscapter had conventional telomeres maintained by a functional telomerase, these telomeric repeats would satisfy at least three conditions usually observed for conventional telomeres:
 1. They would consist of tandemly repeating sequences
 2. Clusters of telomeric repeats and their reverse complement would be found at the 3’ and 5’ ends of reads, respectively, and
 3. The occupancy pattern of the repeats at the ends of reads would resemble an inverted log-normal cumulative curve, which reflects a naturally log-normal distribution of telomere lengths.
