@@ -1,5 +1,6 @@
 # Novel telomere detection algorithm using TideHunter
 Below you will find a brief description on how to use the telomere detection algorithm. Example command:
+
 ```telomere_detection.py long_reads.fasta -k 4 -K 20 -l 20000```
 
 ## Background
