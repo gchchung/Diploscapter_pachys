@@ -43,3 +43,10 @@ required arguments below:
 | ```-K```   | largest repeat period (in bps) to consider |
 | ```-l```   | the window for graphing the occupancy of the repeat patterns. The value of ```l``` should be determined by trial and error to fully cover the lengths of telomeres: we found that 2000 bps were sufficient for _Diploscapter_ telomeres, while _Caenorhabditis_ telomeres required at least 6000 bps. |
 | ```-n```   | graph only the top ```n``` most frequently occurring repeats in the beginnings and ends of reads.|
+
+## References
+Chung _& al._ (2024) manuscript in preparation.
+Dai _& al._ (2023) _Nat Comm_. Unzipped chromosome-level genomes reveal allopolyploid nematode origin pattern as unreduced gamete hybridization.
+Gao _& al._ (2019) _Bioinformatics_. TideHunter: efficient and sensitive tandem repeat detection from noisy long-reads using seed-and-chain.
+Yoshimura _& al._ (2019) _Genom Res_. Recompleting the Caenorhabditis elegans genome.
+
