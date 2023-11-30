@@ -23,7 +23,7 @@ Finally, the user should scan the graphed occupancy patterns to determine if the
 ## Getting started
 ### Prerequisites
 The script is written in Python 3. Required packages include:
-- BioPython (I/O of sequence files)
+- [BioPython](https://biopython.org/wiki/Download) (I/O of sequence files)
 - PIL (for graph png output) 
 - svgutils (for graph svg output)
 - plotly (for graphing)
@@ -33,8 +33,13 @@ In addition, TideHunter v1.4.2 should be installed in the $PATH. Later versions 
 - [TideHunter v1.4.2](https://github.com/yangao07/TideHunter/releases)
 
 ### Usage
+```telomere_detection.py long_reads.fasta -k 4 -K 20 -l 2000 -n 40```
 
-
-### Required arguments
--
- the value of ```l``` should be determined by trial and error to fully cover the lengths of telomeres (we found that 2000 bps were sufficient for _Diploscapter_ telomeres, while _Caenorhabditis_ telomeres required at least 6000 bps).
+#### Required arguments
+| flag | argument |
+| ---- | -------- |
+|      | fasta file containing the long reads. |
+| ```-k```   | smallest repeat period (in bps) to consider |
+| ```-K```   | largest repeat period (in bps) to consider |
+| ```-l```   | the window for graphing the occupancy of the repeat patterns. The value of ```l``` should be determined by trial and error to fully cover the lengths of telomeres: we found that 2000 bps were sufficient for _Diploscapter_ telomeres, while _Caenorhabditis_ telomeres required at least 6000 bps. |
+| ```-n```   | graph only the top ```n``` most frequently occurring repeats in the beginnings and ends of reads.|
