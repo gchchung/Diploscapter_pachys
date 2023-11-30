@@ -46,7 +46,10 @@ required arguments below:
 
 ## References
 Chung _& al._ (2024) manuscript in preparation.
+
 Dai _& al._ (2023) _Nat Comm_. Unzipped chromosome-level genomes reveal allopolyploid nematode origin pattern as unreduced gamete hybridization.
+
 Gao _& al._ (2019) _Bioinformatics_. TideHunter: efficient and sensitive tandem repeat detection from noisy long-reads using seed-and-chain.
+
 Yoshimura _& al._ (2019) _Genom Res_. Recompleting the Caenorhabditis elegans genome.
 
