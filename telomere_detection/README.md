@@ -1,4 +1,4 @@
-# Telomere detection algorithm using TideHunter
+# Novel telomere detection algorithm using TideHunter
 Below you will find a brief description on how to use the telomere detection algorithm. 
 
 ## How it works
