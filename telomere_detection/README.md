@@ -24,10 +24,10 @@ Finally, the user should scan the graphed occupancy patterns to determine if the
 ### Prerequisites
 The script is written in Python 3. Required packages include:
 - [BioPython](https://biopython.org/wiki/Download) (I/O of sequence files)
-- PIL (for graph png output) 
-- svgutils (for graph svg output)
-- plotly (for graphing)
-- kaleido
+- [PIL](https://pypi.org/project/Pillow/) (for graph .png output) 
+- [svgutils](https://pypi.org/project/svgutils/) (for graph .svg output)
+- [plotly](https://plotly.com/python/getting-started/) (for graphing)
+- [kaleido](https://pypi.org/project/kaleido/) (for plotly graphs)
 
 In addition, TideHunter v1.4.2 should be installed in the $PATH. Later versions of TideHunter may produce an ouptut whose column orders are not the same.
 - [TideHunter v1.4.2](https://github.com/yangao07/TideHunter/releases)
