@@ -70,7 +70,7 @@ Intermediate files (TideHunter outputs) are saved in the current folder. Final o
 Finally, a collage of all the plots named ```all_patterns_collage.png``` (or .svg) can be found in the current folder.
 
 **Sample output:**
-A run of the algorithm on C. elegans genomic PacBio reads ([SRR7594465](https://www.ncbi.nlm.nih.gov/sra/?term=SRR7594465), from Yoshimura & al. [2019] _Genom Res_.
+A run of the algorithm on _C. elegans_ genomic PacBio reads ([SRR7594465](https://www.ncbi.nlm.nih.gov/sra/?term=SRR7594465), from Yoshimura _& al._) generated the following ```all_patterns_collage.png```.
 
 ### Usage: Graph occupancies for just one specific repeat sequence
 
