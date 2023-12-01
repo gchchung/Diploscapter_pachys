@@ -11,7 +11,7 @@ The motivation for this algorithm was initially to identify the telomeric repeat
 
 Thus, the telomeric repeat pattern can be found by first identifying the most frequent repeat patterns at the ends of the reads, followed by the elimination of patterns that do not satisfy the 3 conditions above.
 
-The bulk of the code was written starting 2020 and revised bit by bit through 2023. We have tested this code on long reads derived from _Diploscapter_ (Chung _& al._ 2024, in preparation), _Caenorhabditis_ ([Yoshimura _& al._ 2019, _Genome Res_](http://genome.cshlp.org/lookup/pmidlookup?view=long&pmid=31123080)) and _Meloidogyne_ ([Dai _& al._ 2023 _Nat Comm_](https://www.nature.com/articles/s41467-023-42700-w)) nematodes across both Nanopore and PacBio platforms.
+The bulk of the code was written starting 2020 and revised bit by bit through 2023. We have tested this code on long reads derived from _Diploscapter_ (Chung _& al._ 2024, in preparation), _Caenorhabditis_ ([Yoshimura _& al._ 2019, _Genome Res_](http://genome.cshlp.org/lookup/pmidlookup?view=long&pmid=31123080)) and _Meloidogyne_ ([Dai _& al._ 2023 _Nat Comm_](https://www.nature.com/articles/s41467-023-42700-w)) nematodes across both Nanopore and PacBio platforms. We expect the algorithm to work on any unsheared Nanopore and PacBio genomic library derived from a species with conventional telomeres maintained by a functional telomerase.
 
 ## How the algorithm works
 Much of our algorithm depends on the TideHunter program written by Yan Gao, Bo Liu, Yadong Wang, and Yi Xing ([Gao & al. 2019 _Bioinformatics_](https://academic.oup.com/bioinformatics/article/35/14/i200/5529224)). Our algorithm first takes a collection of long reads (from Oxford Nanopore or PacBio sequencing platforms) and partitions each read into two - the first 1000 bps and the last 1000 bps. TideHunter is run on these partitions to detect any tandem repeats of length ```k```. Next, our algorithm reads the TideHunter output and ranks the repeated sequences together with their reverse complements based on occupancy (saved as *_TideHunter_parser_OUTPUT_CONDENSED.txt). This ranking step also merges classes of repeat sequences that are circularly permuted (repeats of ATCG are considered the same class as repeats of TCGA, CGAT and GATC).
@@ -68,6 +68,9 @@ Intermediate files (TideHunter outputs) are saved in the current folder. Final o
 | **ranked occupancy and occurence** of specific repeat patterns and their reverse complements in the first and last 1000 bps of reads. | ```*_TideHunter_parser_OUTPUT_CONDENSED.txt``` |
 
 Finally, a collage of all the plots named ```all_patterns_collage.png``` (or .svg) can be found in the current folder.
+
+**Sample output:**
+A run of the algorithm on C. elegans genomic PacBio reads ([SRR7594465](https://www.ncbi.nlm.nih.gov/sra/?term=SRR7594465), from Yoshimura & al. [2019] _Genom Res_.
 
 ### Usage: Graph occupancies for just one specific repeat sequence
 
