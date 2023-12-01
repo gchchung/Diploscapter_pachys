@@ -20,7 +20,8 @@ To graph the most frequently occurring repeats at the ends of long reads, our al
 
 The user should scan the graphed occupancy patterns to determine if the stranded occupancy and log-normal occupancy can be observed for any pattern - these should be noted and tested further (eg. by FISH).
 
-![image](https://github.com/gchchung/Diploscapter_pachys/assets/69369525/784a6498-f333-4a8a-b2f2-148f65fc4e4b)
+![image](https://github.com/gchchung/Diploscapter_pachys/assets/69369525/e328d92f-d346-4773-8697-58006fb4ecb0)
+
 **Figure 1:** scanning long genomic reads for telomeres.
 
 ## Getting started
@@ -52,7 +53,7 @@ We use the FASTA version of the reads file rather than FASTQ because this algori
 | ```-n```   | graph only the top ```n``` most frequently occurring repeats in the beginnings and ends of reads.|
 
 **Output generated:**
-Intermediate files (TideHunter outputs) are saved in the same folder as the reads. Final output files are organized by repeat pattern length ```k``` in folders with the name ```*_k-mers```. Repeat-pattern-specific files adopt this format in their names:
+Intermediate files (TideHunter outputs) are saved in the current folder. Final output files are further organized by repeat pattern length ```k``` in folders with the name ```*_k-mers```. Repeat-pattern-specific files adopt this format in their names:
 ```[rank of repeat]_[repeat_type]_[type of output file]_[beginning or end of reads]```
 
 
@@ -65,9 +66,10 @@ Intermediate files (TideHunter outputs) are saved in the same folder as the read
 | **occupancy fraction bar plot** of a specific repeat pattern and its reverse complement at the beginning, end, and middle of reads. | ```01_TTTTTT_occupancy_graph_2000nt_all_bar.png``` (or svg) |
 | **occupancy fraction line plot** by nucleotide position of a specific repeat pattern and its reverse complement at the beginning of reads. | ```01_TTTTTT_occupancy_graph_2000nt_head.png``` (or svg) |
 | **occupancy fraction line plot** by nucleotide position of a specific repeat pattern and its reverse complement at the end of reads. | ```01_TTTTTT_occupancy_graph_2000nt_head.png``` (or svg) |
-| occupancy and occurrence of specific repeat patterns in the first and last 1000 bps of reads. | ```*_TideHunter_parser_OUTPUT.txt``` |
-| ranked occupancy and occurence of specific repeat patterns and their reverse complements in the first and last 1000 bps of reads. | ```*_TideHunter_parser_OUTPUT_CONDENSED.txt``` |
+| **occupancy and occurrence** of specific repeat patterns in the first and last 1000 bps of reads. | ```*_TideHunter_parser_OUTPUT.txt``` |
+| **ranked occupancy and occurence** of specific repeat patterns and their reverse complements in the first and last 1000 bps of reads. | ```*_TideHunter_parser_OUTPUT_CONDENSED.txt``` |
 
+Finally, a collage of all the plots named ```all_patterns_collage.png``` (or .svg) can be found in the current folder.
 
 ### Usage: Graph occupancies for just one specific repeat sequence
 
