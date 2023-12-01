@@ -77,7 +77,7 @@ Finally, a collage of all the plots named ```all_patterns_collage.png``` (or .sv
 **Sample output:**
 A run of the algorithm on _C. elegans_ genomic PacBio reads ([SRR7594465](https://www.ncbi.nlm.nih.gov/sra/?term=SRR7594465), from Yoshimura _& al._) generated the following ```all_patterns_collage.png```.
 
-### Usage: Graph occupancies for just one specific repeat sequence
+### Sceario 2: Graph occupancies for just one specific repeat sequence
 
 ## References
 Chung _& al._ (2024) manuscript in preparation.
@@ -87,4 +87,10 @@ Dai _& al._ (2023) _Nat Comm_. Unzipped chromosome-level genomes reveal allopoly
 Gao _& al._ (2019) _Bioinformatics_. TideHunter: efficient and sensitive tandem repeat detection from noisy long-reads using seed-and-chain.
 
 Yoshimura _& al._ (2019) _Genom Res_. Recompleting the Caenorhabditis elegans genome.
+
+## Contact
+George Chung
+Email: [gc95@nyu.edu](mailto:gc95@nyu.edu)
+Twitter: @gchchung
+Project: [https://github.com/gchchung/Diploscapter_pachys/](https://github.com/gchchung/Diploscapter_pachys/)
 
