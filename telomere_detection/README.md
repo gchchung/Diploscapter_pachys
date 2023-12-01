@@ -1,4 +1,4 @@
-# Novel telomere detection algorithm using TideHunter and long reads without assembly
+# A novel telomere detection algorithm using TideHunter and long reads without assembly
 Below you will find a brief description on how to use the novel telomere detection algorithm. Example command:
 
 ```python3 telomere_detection.py long_reads.fasta -k 4 -K 20 -l 2000 -n 40```
@@ -77,7 +77,12 @@ Finally, a collage of all the plots named ```all_patterns_collage.png``` (or .sv
 **Sample output:**
 A run of the algorithm on _C. elegans_ genomic PacBio reads ([SRR7594465](https://www.ncbi.nlm.nih.gov/sra/?term=SRR7594465), from Yoshimura _& al._) generated the following ```all_patterns_collage.png```.
 
-### Sceario 2: Graph occupancies for just one specific repeat sequence
+Here it is again with the repeat period and repeat occupancy ranking labelled on Adobe Illustrator. The patterns TTAGGC, TTAGGCTTAGGC, and TTAGGCTTAGGCTAGGC are the only ones with **stranded occupancy**, highlighted in the red boxes.
+
+### Scenario 2: Graph occupancies for just one specific repeat sequence
+
+### Scenario 3: The mystery of _Meloidogyne incognita_ telomeres
+
 
 ## References
 Chung _& al._ (2024) manuscript in preparation.
