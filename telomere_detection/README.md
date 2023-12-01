@@ -102,6 +102,12 @@ Gao _& al._ (2019) _Bioinformatics_. TideHunter: efficient and sensitive tandem 
 
 Yoshimura _& al._ (2019) _Genom Res_. Recompleting the Caenorhabditis elegans genome.
 
+## Conference presentations
+This algorithm has been presented at multiple academic/industry conferences, including:
+- The 23rd International C. elegans Conference (online) in 2021
+- Nanopore Community Meeting 2022 (New York, USA) in 2022
+- The 24th International C. elegans Conference (Glasgow, Scotland) in 2023
+
 ## Contact
 George Chung, PhD
 
