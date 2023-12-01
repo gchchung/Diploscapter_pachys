@@ -35,7 +35,8 @@ The script is written in Python 3. Required packages include:
 In addition, TideHunter v1.4.2 should be installed in the $PATH. Later versions of TideHunter may produce an ouptut whose column orders are not the same.
 - [TideHunter v1.4.2](https://github.com/yangao07/TideHunter/releases)
 
-### Usage
+### Usage:
+#### Graph occupancies for many repeat types
 To generate occupancy graphs, covering the first and last 2000 nucleotides, for the top 40 most frequently occurring 4-mer to 20-mer terminal repeats in "long_reads.fasta"
 
 ```telomere_detection.py long_reads.fasta -k 4 -K 20 -l 2000 -n 40```
