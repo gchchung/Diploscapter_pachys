@@ -36,6 +36,9 @@ The script is written in Python 3. Required packages include the following:
 In addition, TideHunter v1.4.2 should be installed in the $PATH. Later versions of TideHunter may produce an ouptut whose column orders are not the same and will be incorrectly parsed by our algorithm.
 - [TideHunter v1.4.2](https://github.com/yangao07/TideHunter/releases)
 
+Finally, the read files you will use may not already be in FASTA format, but rather in FASTQ. To convert the FASTQ file into FASTA, reformat the file and discard the quality information by running ```sed``` in your shell:
+```sed -n '1~4s/^@/>/p;2~4p' long_reads.fastq > long_reads.fasta```
+
 ### Installation
 Required Python packages can be installed with your favourite package manager (eg. ```pip3 install [package name]``` or ```conda install [package name]```). TideHunter can be installed by downloading the source files and compiling following the developers' instructions, or by downloading a pre-compiled binary if your system is x64 Linux. To run the telomere detection algorithm, download telomere_detection.py from here and add the path to $PATH, or place the Python script directly in the folder with the reads to be analysed.
 
