@@ -43,6 +43,9 @@ Finally, the read files you will use may not already be in FASTA format, but rat
 ### Installation
 Required Python packages can be installed with your favourite package manager (eg. ```pip3 install [package name]``` or ```conda install [package name]```). TideHunter can be installed by downloading the source files and compiling following the developers' instructions, or by downloading a pre-compiled binary if your system is x64 Linux. To run the telomere detection algorithm, download telomere_detection.py from here and add the path to $PATH, or place the Python script directly in the folder with the reads to be analysed.
 
+### Hardware requirements
+The code was written and tested on a personal computer with Intel Core i5-7300HQ with 32 GB of RAM running Ubuntu in WSL. We expect any moderately modern computer running Linux or Unix-like environments will be sufficient.
+
 ## Usage
 
 ### Scenario 1: Graph occupancies for many repeat types to scan for candidate telomeric repeats
