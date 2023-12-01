@@ -50,10 +50,10 @@ To generate occupancy graphs, covering the first and last 2000 nucleotides, for 
 | ```-n```   | graph only the top ```n``` most frequently occurring repeats in the beginnings and ends of reads.|
 
 **Output generated:**
-Output files are organized by repeat pattern length ```k``` in folders with the name ```*_k-mers```. Repeat-pattern-specific files adopt this format in their names:
+Intermediate files (TideHunter outputs) are saved in the same folder as the reads. Final output files are organized by repeat pattern length ```k``` in folders with the name ```*_k-mers```. Repeat-pattern-specific files adopt this format in their names:
 ```[rank of repeat]_[repeat_type]_[type of output file]_[beginning or end of reads]```
 
-Intermediate files (TideHunter outputs) are saved in the same folder as the reads
+
 
 | file | example |
 | ---- | ------- |
