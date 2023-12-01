@@ -4,9 +4,9 @@ Below you will find a brief description on how to use this novel telomere detect
 ```python3 telomere_detection.py long_reads.fasta -k 4 -K 20 -l 2000 -n 40```
 
 ## Background
-The motivation for this algorithm was initially to identify the telomeric repeats of _Diploscapter pachys_ and _Diploscapter coronatus_. These two species were sequenced using Nanopore and PacBio. We reasoned that if the genomic reads were not intentionally sheared, telomeres could be captured at the 5' and the 3' ends of reads. Furthermore, if _Diploscapter_ had conventional telomeres maintained by a functional telomerase, these telomeric repeats would satisfy at least three conditions usually observed for conventional telomeres:
+The motivation for this algorithm was initially to identify the telomeric repeats of _Diploscapter pachys_ and _Diploscapter coronatus_, which have divergent telomeric sequences different from related nematodes. These two species were re-sequenced using Nanopore and PacBio. We reasoned that if the genomic reads were not intentionally sheared, telomeres should be captured at the 5' and the 3' ends of some reads. Furthermore, if _Diploscapter_ had conventional telomeres maintained by a functional telomerase, these telomeric repeats would have 3 properties usually observed for conventional telomeres:
 1. Tandem repeats - they would consist of tandemly repeating sequences (due to telomerase action)
-2. Stranded occupancy - clusters of telomeric repeats and their reverse complement would be found at the 3’ and 5’ ends of reads, respectively, and
+2. Stranded occupancy - clusters of telomeric repeats will be found almost exclusively at the 3' ends of reads, while clusters of their reverse complement would be found almost exclusiely at the 5’ ends of reads, and
 3. Log-normal occupancy - the occupancy pattern of the repeats over length would resemble an inverted log-normal cumulative curve, which reflects a naturally log-normal distribution of telomere lengths.
 
 Thus, the telomeric repeat pattern can be found by first identifying the most frequent repeat patterns at the ends of the reads, followed by the elimination of patterns that do not satisfy the 3 conditions above.
