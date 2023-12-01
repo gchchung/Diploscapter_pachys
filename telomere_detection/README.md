@@ -20,6 +20,9 @@ To graph the most frequently occurring repeats at the ends of long reads, our al
 
 Finally, the user should scan the graphed occupancy patterns to determine if the stranded occupancy and log-normal occupancy can be observed for any pattern - these should be noted and tested further (eg. by FISH).
 
+![image](https://github.com/gchchung/Diploscapter_pachys/assets/69369525/784a6498-f333-4a8a-b2f2-148f65fc4e4b)
+Figure 1: scanning long genomic reads for telomeres.
+
 ## Getting started
 ### Prerequisites
 The script is written in Python 3. Required packages include:
