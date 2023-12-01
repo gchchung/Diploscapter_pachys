@@ -77,11 +77,13 @@ Finally, a collage of all the plots named ```all_patterns_collage.png``` (or .sv
 **Sample output:**
 A run of the algorithm on _C. elegans_ genomic PacBio reads ([SRR7594465](https://www.ncbi.nlm.nih.gov/sra/?term=SRR7594465), from Yoshimura _& al._) generated the following ```all_patterns_collage.png```.
 
-Here it is again with the repeat period and repeat occupancy ranking labelled on Adobe Illustrator. The patterns TTAGGC, TTAGGCTTAGGC, and TTAGGCTTAGGCTAGGC are the only ones with **stranded occupancy**, highlighted in the red boxes.
+Here it is again with the repeat period and repeat occupancy ranking labelled on Adobe Illustrator. The patterns TTAGGC, TTAGGCTTAGGC, and TTAGGCTTAGGCTTAGGC are the only ones with **stranded occupancy**, highlighted in the red boxes.
 
 ### Scenario 2: Graph occupancies for just one specific repeat sequence
 
-### Scenario 3: The mystery of _Meloidogyne incognita_ telomeres
+### Scenario 3: Discovery of _Diploscapter_ telomeres
+
+### Scenario 4: Mystery of _Meloidogyne incognita_ telomeres
 
 
 ## References
