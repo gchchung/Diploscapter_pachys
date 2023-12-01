@@ -16,12 +16,12 @@ The bulk of the code was written starting 2020 and revised bit by bit through 20
 ## How the algorithm works
 Much of our algorithm depends on the TideHunter program written by [Yan Gao, Bo Liu, Yadong Wang, and Yi Xing (Gao & al. 2019 _Bioinformatics_)](https://academic.oup.com/bioinformatics/article/35/14/i200/5529224). Our algorithm first takes a collection of long reads (from Oxford Nanopore or PacBio sequencing platforms) and partitions each read into two - the first 1000 bps and the last 1000 bps. TideHunter is run on these partitions to detect any tandem repeats of length ```k```. Next, our algorithm reads the TideHunter output and ranks the repeated sequences together with their reverse complements based on occupancy (saved as *_TideHunter_parser_OUTPUT_CONDENSED.txt). This ranking step also merges classes of repeat sequences that are circularly permuted (repeats of ATCG are considered the same class as repeats of TCGA, CGAT and GATC).
 
-To graph the most frequently occurring repeats at the ends of long reads, our algorithm runs TideHunter again on full-length reads and parses through the output. Only the top ```n``` repeat patterns represented in the first and last 1000 bps of reads are considered. The user provides a length window ```l``` for which occupancies will be graphed - Finally, our algorithm captures the occupancy patterns in the first ```l``` bps, last ```l``` bps and the middle of all reads longer than ```2*l```, then graphs these patterns.
+To graph the most frequently occurring repeats at the ends of long reads, our algorithm runs TideHunter again on full-length reads and parses through the output. Only the top ```n``` repeat patterns represented in the first and last 1000 bps of reads are considered. The user provides a length window ```l``` for which occupancies will be graphed. Finally, our algorithm captures the occupancy patterns in the first ```l``` bps, last ```l``` bps, and the middle of all reads longer than ```2*l```, then graphs these patterns.
 
-Finally, the user should scan the graphed occupancy patterns to determine if the stranded occupancy and log-normal occupancy can be observed for any pattern - these should be noted and tested further (eg. by FISH).
+The user should scan the graphed occupancy patterns to determine if the stranded occupancy and log-normal occupancy can be observed for any pattern - these should be noted and tested further (eg. by FISH).
 
 ![image](https://github.com/gchchung/Diploscapter_pachys/assets/69369525/784a6498-f333-4a8a-b2f2-148f65fc4e4b)
-Figure 1: scanning long genomic reads for telomeres.
+**Figure 1:** scanning long genomic reads for telomeres.
 
 ## Getting started
 ### Prerequisites
@@ -31,14 +31,17 @@ The script is written in Python 3. Required packages include:
 - [svgutils](https://pypi.org/project/svgutils/) (for graph .svg output)
 - [plotly](https://plotly.com/python/getting-started/) (for graphing)
 - [kaleido](https://pypi.org/project/kaleido/) (for plotly graphs)
+All of these can be installed by your favourite package manager (eg. ```pip3 install [package name]``` or ```conda install [package name]```).  
 
-In addition, TideHunter v1.4.2 should be installed in the $PATH. Later versions of TideHunter may produce an ouptut whose column orders are not the same.
+In addition, TideHunter v1.4.2 should be installed in the $PATH. Later versions of TideHunter may produce an ouptut whose column orders are not the same. Install by following the developers' instructions or by downloading a pre-compiled binary (if your system is x64 Linux).
 - [TideHunter v1.4.2](https://github.com/yangao07/TideHunter/releases)
 
 ### Usage: Graph occupancies for many repeat types
 To generate occupancy graphs, covering the first and last 2000 nucleotides, for the top 40 most frequently occurring 4-mer to 20-mer terminal repeats in "long_reads.fasta"
 
 ```telomere_detection.py long_reads.fasta -k 4 -K 20 -l 2000 -n 40```
+
+We use the FASTA version of the reads file rather than FASTQ because this algorithm does not take the base quality into account.
 
 **required arguments below:**
 | flag | argument |
