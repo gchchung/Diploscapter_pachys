@@ -57,9 +57,9 @@ To generate occupancy graphs, covering the first and last 2000 nucleotides, for 
 | flag | argument |
 | ---- | -------- |
 | input | FASTA file containing the long reads. |
-| ```-k```   | smallest repeat period (in bps) to consider |
-| ```-K```   | largest repeat period (in bps) to consider |
-| ```-l```   | the window for graphing the occupancy of the repeat patterns. The value of ```l``` should be determined by trial and error to fully cover the lengths of telomeres: we found that 2000 bps were sufficient for _Diploscapter_ telomeres, while _Caenorhabditis_ telomeres required at least 6000 bps. Beware that the algorithm will not take any reads shorter than ```2*l``` into account when calculating occupancy or graphing. |
+| ```-k```   | smallest repeat period (in bps) to consider. |
+| ```-K```   | largest repeat period (in bps) to consider. |
+| ```-l```   | the window (in bps) for graphing the occupancy of the repeat patterns. The value of ```l``` should be determined by trial and error to fully cover the lengths of telomeres: we found that 2000 bps were sufficient for _Diploscapter_ telomeres, while _Caenorhabditis_ telomeres required at least 6000 bps. Beware that the algorithm will not take any reads shorter than ```2*l``` into consideration when calculating the repeat occupancy or when graphing. |
 | ```-n```   | graph only the top ```n``` most frequently occurring repeats in the beginnings and ends of reads.|
 
 **Output generated:**
