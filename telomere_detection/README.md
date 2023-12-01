@@ -1,7 +1,7 @@
 # Novel telomere detection algorithm using TideHunter and long reads without assembly
 Below you will find a brief description on how to use the novel telomere detection algorithm. Example command:
 
-```telomere_detection.py long_reads.fasta -k 4 -K 20 -l 2000 -n 40```
+```python3 telomere_detection.py long_reads.fasta -k 4 -K 20 -l 2000 -n 40```
 
 ## Background
 The motivation for this algorithm was initially to identify the telomeric repeats of _Diploscapter pachys_ and _Diploscapter coronatus_. These two species were sequenced using Nanopore and PacBio. We reasoned that if the genomic reads were not intentionally sheared, telomeres could be captured at the 5' and the 3' ends of reads. Furthermore, if _Diploscapter_ had conventional telomeres maintained by a functional telomerase, these telomeric repeats would satisfy at least three conditions usually observed for conventional telomeres:
@@ -33,18 +33,18 @@ The script is written in Python 3. Required packages include the following:
 - [plotly](https://plotly.com/python/getting-started/) (for graphing)
 - [kaleido](https://pypi.org/project/kaleido/) (for plotly graphs)
 
-In addition, TideHunter v1.4.2 should be installed in the $PATH. Later versions of TideHunter may produce an ouptut whose column orders are not the same. Install by following the developers' instructions or by downloading a pre-compiled binary (if your system is x64 Linux).
+In addition, TideHunter v1.4.2 should be installed in the $PATH. Later versions of TideHunter may produce an ouptut whose column orders are not the same and will be incorrectly parsed by our algorithm.
 - [TideHunter v1.4.2](https://github.com/yangao07/TideHunter/releases)
 
 ### Installation
-Required Python packages can be installed with your favourite package manager (eg. ```pip3 install [package name]``` or ```conda install [package name]```)
+Required Python packages can be installed with your favourite package manager (eg. ```pip3 install [package name]``` or ```conda install [package name]```). TideHunter can be installed by downloading the source files and compiling following the developers' instructions, or by downloading a pre-compiled binary if your system is x64 Linux. To run the telomere detection algorithm, download telomere_detection.py from here and add the path to $PATH, or place the Python script directly in the folder with the reads to be analysed.
 
 ## Usage
 
 ### Scenario 1: Graph occupancies for many repeat types to scan for candidate telomeric repeats
 To generate occupancy graphs, covering the first and last 2000 nucleotides, for the top 40 most frequently occurring 4-mer to 20-mer terminal repeats in "long_reads.fasta"
 
-```telomere_detection.py long_reads.fasta -k 4 -K 20 -l 2000 -n 40```
+```python3 telomere_detection.py long_reads.fasta -k 4 -K 20 -l 2000 -n 40```
 
 **required arguments below:**
 | flag | argument |
