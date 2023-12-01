@@ -35,13 +35,12 @@ The script is written in Python 3. Required packages include:
 In addition, TideHunter v1.4.2 should be installed in the $PATH. Later versions of TideHunter may produce an ouptut whose column orders are not the same.
 - [TideHunter v1.4.2](https://github.com/yangao07/TideHunter/releases)
 
-### Usage:
-#### Graph occupancies for many repeat types
+### Usage: Graph occupancies for many repeat types
 To generate occupancy graphs, covering the first and last 2000 nucleotides, for the top 40 most frequently occurring 4-mer to 20-mer terminal repeats in "long_reads.fasta"
 
 ```telomere_detection.py long_reads.fasta -k 4 -K 20 -l 2000 -n 40```
 
-required arguments below:
+**required arguments below:**
 | flag | argument |
 | ---- | -------- |
 | input | fasta file containing the long reads. |
@@ -49,6 +48,20 @@ required arguments below:
 | ```-K```   | largest repeat period (in bps) to consider |
 | ```-l```   | the window for graphing the occupancy of the repeat patterns. The value of ```l``` should be determined by trial and error to fully cover the lengths of telomeres: we found that 2000 bps were sufficient for _Diploscapter_ telomeres, while _Caenorhabditis_ telomeres required at least 6000 bps. |
 | ```-n```   | graph only the top ```n``` most frequently occurring repeats in the beginnings and ends of reads.|
+
+**Output generated**
+Output files are grouped by repeat pattern length ```k``` in folders with the name ```*_k-mers```. Repeat-pattern-specific files adopt this format in their names:
+```[rank of repeat]_[repeat_type]_[type of output file]_[beginning or end of reads]```
+
+| file | example |
+| ---- | ------- |
+| occupancy **counts** of a specific repeat pattern and its reverse complement at the terminal ```l``` nucleotides of reads. | ```01_TTTTTT_repeat_class_head_and_tail_count.txt``` |
+| occupancy **fractions** of a specific repeat pattern and its reverse complement at the terminal ```l``` nucleotides of reads. | ```01_TTTTTT_repeat_class_head_and_tail_fractions.txt``` |
+| count **summary** of a specific repeat pattern and its reverse complement, at the beginning, end, and middle of reads. | ```01_TTTTTT_repeat_class_repeat_count_summary.txt``` |
+| occupancy fraction **bar plot** of a specific repeat pattern and its reverse complement at the beginning, end, and middle of reads. | ```01_TTTTTT_occupancy_graph_2000nt_all_bar.png``` (or svg) |
+| occupancy fraction line plot of a specific repeat pattern and its reverse complement at the beginning of reads. | ```01_TTTTTT_occupancy_graph_2000nt_head.png``` (or svg) |
+| occupancy fraction line plot of a specific repeat pattern and its reverse complement at the end of reads. | ```01_TTTTTT_occupancy_graph_2000nt_head.png``` (or svg) |
+
 
 To generate the occupancy graph for a single type of repeat
 
