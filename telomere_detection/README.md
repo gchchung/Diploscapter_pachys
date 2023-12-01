@@ -26,7 +26,7 @@ The user should scan the graphed occupancy patterns to determine if the stranded
 
 ## Getting started
 ### Prerequisites
-The script is written in Python 3. Required packages include the following, which can be installed by your favourite package manager (eg. ```pip3 install [package name]``` or ```conda install [package name]```):
+The script is written in Python 3. Required packages include the following:
 - [BioPython](https://biopython.org/wiki/Download) (I/O of sequence files)
 - [pillow](https://pypi.org/project/Pillow/) (for graph .png output) 
 - [svgutils](https://pypi.org/project/svgutils/) (for graph .svg output)
@@ -36,7 +36,12 @@ The script is written in Python 3. Required packages include the following, whic
 In addition, TideHunter v1.4.2 should be installed in the $PATH. Later versions of TideHunter may produce an ouptut whose column orders are not the same. Install by following the developers' instructions or by downloading a pre-compiled binary (if your system is x64 Linux).
 - [TideHunter v1.4.2](https://github.com/yangao07/TideHunter/releases)
 
-### Usage: Graph occupancies for many repeat types
+### Installation
+Required Python packages can be installed with your favourite package manager (eg. ```pip3 install [package name]``` or ```conda install [package name]```)
+
+## Usage
+
+### Scenario 1: Graph occupancies for many repeat types to scan for candidate telomeric repeats
 To generate occupancy graphs, covering the first and last 2000 nucleotides, for the top 40 most frequently occurring 4-mer to 20-mer terminal repeats in "long_reads.fasta"
 
 ```telomere_detection.py long_reads.fasta -k 4 -K 20 -l 2000 -n 40```
