@@ -20,7 +20,7 @@ To graph the most frequently occurring repeats at the ends of long reads, our al
 
 The user should scan the graphed occupancy patterns to determine if the stranded occupancy and log-normal occupancy can be observed for any pattern - these should be noted and tested further (eg. by FISH).
 
-![image](https://github.com/gchchung/Diploscapter_pachys/assets/69369525/e328d92f-d346-4773-8697-58006fb4ecb0)
+![image](https://github.com/gchchung/Diploscapter_pachys/assets/69369525/8366e17a-348b-4b44-b584-380ae60c4c9a)
 
 **Figure 1:** scanning long genomic reads for telomeres.
 
