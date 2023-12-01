@@ -50,20 +50,24 @@ To generate occupancy graphs, covering the first and last 2000 nucleotides, for 
 | ```-n```   | graph only the top ```n``` most frequently occurring repeats in the beginnings and ends of reads.|
 
 **Output generated:**
-Output files are grouped by repeat pattern length ```k``` in folders with the name ```*_k-mers```. Repeat-pattern-specific files adopt this format in their names:
+Output files are organized by repeat pattern length ```k``` in folders with the name ```*_k-mers```. Repeat-pattern-specific files adopt this format in their names:
 ```[rank of repeat]_[repeat_type]_[type of output file]_[beginning or end of reads]```
+
+Intermediate files (TideHunter outputs) are saved in the same folder as the reads
 
 | file | example |
 | ---- | ------- |
-| **occupancy counts** of a specific repeat pattern and its reverse complement at the terminal ```l``` nucleotides of reads. | ```01_TTTTTT_repeat_class_head_and_tail_count.txt``` |
-| **occupancy fractions** of a specific repeat pattern and its reverse complement at the terminal ```l``` nucleotides of reads. | ```01_TTTTTT_repeat_class_head_and_tail_fractions.txt``` |
+| **occupancy counts** by nucleotide position of a specific repeat pattern and its reverse complement at the terminal ```l``` nucleotides of reads. | ```01_TTTTTT_repeat_class_head_and_tail_count.txt``` |
+| **occupancy fractions** by nucleotide position of a specific repeat pattern and its reverse complement at the terminal ```l``` nucleotides of reads. | ```01_TTTTTT_repeat_class_head_and_tail_fractions.txt``` |
 | **count summary** of a specific repeat pattern and its reverse complement, at the beginning, end, and middle of reads. | ```01_TTTTTT_repeat_class_repeat_count_summary.txt``` |
 | **occupancy fraction bar plot** of a specific repeat pattern and its reverse complement at the beginning, end, and middle of reads. | ```01_TTTTTT_occupancy_graph_2000nt_all_bar.png``` (or svg) |
-| **occupancy fraction line plot** of a specific repeat pattern and its reverse complement at the beginning of reads. | ```01_TTTTTT_occupancy_graph_2000nt_head.png``` (or svg) |
-| **occupancy fraction line plot** of a specific repeat pattern and its reverse complement at the end of reads. | ```01_TTTTTT_occupancy_graph_2000nt_head.png``` (or svg) |
+| **occupancy fraction line plot** by nucleotide position of a specific repeat pattern and its reverse complement at the beginning of reads. | ```01_TTTTTT_occupancy_graph_2000nt_head.png``` (or svg) |
+| **occupancy fraction line plot** by nucleotide position of a specific repeat pattern and its reverse complement at the end of reads. | ```01_TTTTTT_occupancy_graph_2000nt_head.png``` (or svg) |
+| occupancy and occurrence of specific repeat patterns in the first and last 1000 bps of reads. | ```*_TideHunter_parser_OUTPUT.txt``` |
+| ranked occupancy and occurence of specific repeat patterns and their reverse complements in the first and last 1000 bps of reads. | ```*_TideHunter_parser_OUTPUT_CONDENSED.txt``` |
 
 
-To generate the occupancy graph for a single type of repeat
+### Usage: Graph occupancies for just one specific repeat sequence
 
 ## References
 Chung _& al._ (2024) manuscript in preparation.
