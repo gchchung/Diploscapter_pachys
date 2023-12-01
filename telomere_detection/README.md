@@ -41,8 +41,6 @@ To generate occupancy graphs, covering the first and last 2000 nucleotides, for 
 
 ```telomere_detection.py long_reads.fasta -k 4 -K 20 -l 2000 -n 40```
 
-We use the FASTA version of the reads file rather than FASTQ because this algorithm does not take the base quality into account.
-
 **required arguments below:**
 | flag | argument |
 | ---- | -------- |
