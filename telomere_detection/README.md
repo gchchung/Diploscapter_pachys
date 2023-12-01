@@ -37,6 +37,7 @@ In addition, TideHunter v1.4.2 should be installed in the $PATH. Later versions 
 - [TideHunter v1.4.2](https://github.com/yangao07/TideHunter/releases)
 
 Finally, the read files you will use may not already be in FASTA format, but rather in FASTQ. To convert the FASTQ file into FASTA, reformat the file and discard the quality information by running ```sed``` in your shell:
+
 ```sed -n '1~4s/^@/>/p;2~4p' long_reads.fastq > long_reads.fasta```
 
 ### Installation
