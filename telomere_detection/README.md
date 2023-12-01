@@ -89,8 +89,12 @@ Gao _& al._ (2019) _Bioinformatics_. TideHunter: efficient and sensitive tandem 
 Yoshimura _& al._ (2019) _Genom Res_. Recompleting the Caenorhabditis elegans genome.
 
 ## Contact
-George Chung
-Email: [gc95@nyu.edu](mailto:gc95@nyu.edu)
-Twitter: @gchchung
-Project: [https://github.com/gchchung/Diploscapter_pachys/](https://github.com/gchchung/Diploscapter_pachys/)
+George Chung, PhD
 
+Research Scientist, New York University
+
+Email: [gc95@nyu.edu](mailto:gc95@nyu.edu)
+
+Twitter: @gchchung
+
+Project: [https://github.com/gchchung/Diploscapter_pachys/](https://github.com/gchchung/Diploscapter_pachys/)
