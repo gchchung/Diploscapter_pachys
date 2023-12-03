@@ -36,7 +36,7 @@ The script is written in Python 3. Required packages include the following:
 In addition, TideHunter v1.4.2 should be installed in the $PATH. Later versions of TideHunter may produce an ouptut whose column orders are not the same and will be incorrectly parsed by our algorithm.
 - [TideHunter v1.4.2](https://github.com/yangao07/TideHunter/releases)
 
-Finally, the read files you will use may not already be in FASTA format, but rather in FASTQ. To convert the FASTQ file into FASTA, reformat the file and discard the quality information by running ```sed``` in your shell:
+Finally, the read files you will use may not already be in FASTA format, but rather in FASTQ. To convert the FASTQ file into FASTA, reformat the file and discard the quality information by running ```sed``` in your shell. For example:
 
 ```sed -n '1~4s/^@/>/p;2~4p' long_reads.fastq > long_reads.fasta```
 
@@ -82,7 +82,11 @@ Intermediate files (TideHunter outputs) are saved in the current folder. Final o
 Finally, a collage of all the plots named ```all_patterns_collage.png``` (or .svg) can be found in the current folder.
 
 **Sample output:**
-A run of the algorithm on _C. elegans_ genomic PacBio reads ([SRR7594465](https://www.ncbi.nlm.nih.gov/sra/?term=SRR7594465), from Yoshimura _& al._) generated the following ```all_patterns_collage.png```.
+A run of the algorithm on _C. elegans_ genomic PacBio reads ([SRR7594465](https://www.ncbi.nlm.nih.gov/sra/?term=SRR7594465), from Yoshimura _& al._) using the command
+
+```python3 telomere_detection.py SRR7594465.fasta -k 4 -K 20 -l 2000 -n 40```
+
+generated the following ```all_patterns_collage.png```.
 
 Here it is again with the repeat period and repeat occupancy ranking labelled on Adobe Illustrator. The patterns TTAGGC, TTAGGCTTAGGC, and TTAGGCTTAGGCTTAGGC are the only ones with **stranded occupancy**, highlighted in the red boxes.
 
