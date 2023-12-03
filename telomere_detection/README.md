@@ -18,7 +18,7 @@ Much of our algorithm depends on the TideHunter program written by Yan Gao, Bo L
 
 To graph the most frequently occurring repeats at the ends of long reads, our algorithm runs TideHunter again on full-length reads and parses through the output. Only the top ```r``` repeat patterns represented in the first and last 1000 bps of reads are considered. The user provides a length window ```n``` for which occupancies will be graphed. Finally, our algorithm captures the occupancy patterns in the first ```n``` bps, last ```n``` bps, and the middle of all reads longer than ```2*n```, then graphs these patterns.
 
-The user should scan the graphed occupancy patterns to determine if the stranded occupancy and log-normal occupancy can be observed for any repeat - these should be noted and tested further (eg. by FISH).
+The user should then scan the graphed occupancy patterns to determine if the stranded occupancy and log-normal occupancy can be observed for any repeat - these should be noted and tested further (eg. by FISH).
 
 ![image](https://github.com/gchchung/Diploscapter_pachys/assets/69369525/8366e17a-348b-4b44-b584-380ae60c4c9a)
 
