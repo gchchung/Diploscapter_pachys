@@ -72,7 +72,7 @@ Intermediate files (TideHunter outputs) are saved in the current folder. Final o
 | ---- | ------- |
 | **occupancy counts** by nucleotide position of a specific repeat pattern and its reverse complement at the terminal ```n``` nucleotides of reads. | ```01_TTTTTT_repeat_class_head_and_tail_count.txt``` |
 | **occupancy fractions** by nucleotide position of a specific repeat pattern and its reverse complement at the terminal ```n``` nucleotides of reads. | ```01_TTTTTT_repeat_class_head_and_tail_fractions.txt``` |
-| **count summary** of a specific repeat pattern and its reverse complement, at the beginning, end, and middle of reads. Includes a count of discarded reads (reads that are not ```L``` bps long). | ```01_TTTTTT_repeat_class_repeat_count_summary.txt``` |
+| **count summary** of a specific repeat pattern and its reverse complement, at the beginning, end, and middle of reads. Includes a count of discarded reads (reads that are not ```n``` bps long). | ```01_TTTTTT_repeat_class_repeat_count_summary.txt``` |
 | **occupancy fraction bar plot** of a specific repeat pattern and its reverse complement at the beginning, end, and middle of reads. | ```01_TTTTTT_occupancy_graph_2000nt_all_bar.png``` (or svg) |
 | **occupancy fraction line plot** by nucleotide position of a specific repeat pattern and its reverse complement at the beginning of reads. | ```01_TTTTTT_occupancy_graph_2000nt_head.png``` (or svg) |
 | **occupancy fraction line plot** by nucleotide position of a specific repeat pattern and its reverse complement at the end of reads. | ```01_TTTTTT_occupancy_graph_2000nt_head.png``` (or svg) |
