@@ -79,7 +79,7 @@ Intermediate files (TideHunter outputs) are saved in the current folder. Final o
 | **occupancy and occurrence** of specific repeat patterns in the first and last 1000 bps of reads. | ```*_TideHunter_parser_OUTPUT.txt``` |
 | **ranked occupancy and occurence** of specific repeat patterns and their reverse complements in the first and last 1000 bps of reads. | ```*_TideHunter_parser_OUTPUT_CONDENSED.txt``` |
 
-Finally, a collage of all the plots named ```all_patterns_collage.png``` (or .svg) can be found in the current folder.
+Finally, a collage of all the plots with the same k-value is saved as ```*_patterns_collage.png``` (or .svg) in individual k-mer folders and a collage of all plots is saved as ```all_patterns_collage.png``` (or .svg) in the current folder. The collages show the patterns by repeat occupancy rank (top-ranked at the top, r-th ranked at the bottom), and repeat period (```k``` at the left, ```K``` at the right)
 
 **Sample output:**
 A run of the algorithm on _C. elegans_ genomic PacBio reads ([SRR7594465](https://www.ncbi.nlm.nih.gov/sra/?term=SRR7594465), from Yoshimura _& al._) using the command
