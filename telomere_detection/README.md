@@ -86,7 +86,7 @@ A run of the algorithm on _C. elegans_ genomic PacBio reads ([SRR7594465](https:
 
 ```python3 telomere_detection.py SRR7594465.fasta -k 4 -K 20 -n 2000 -r 40```
 
-generated the following ```all_patterns_collage.png``` ([link](https://github.com/gchchung/Diploscapter_pachys/blob/main/telomere_detection/sample_outputs/SRR7594465_Yoshimura_et_al/all_patterns_collage.png)). [Here it is again with the repeat period and repeat occupancy ranking labelled on Adobe Illustrator](https://github.com/gchchung/Diploscapter_pachys/blob/main/telomere_detection/sample_outputs/SRR7594465_Yoshimura_et_al/all_patterns_collage_labelled_copy.png). The patterns TTAGGC, TTAGGCTTAGGC, and TTAGGCTTAGGCTTAGGC, and patterns 1 nucleotide different (likely due to telomere mutations or sequencing errors) are the only ones with **stranded occupancy**, highlighted in the red boxes.
+generated the following ```all_patterns_collage.png``` ([link](https://github.com/gchchung/Diploscapter_pachys/blob/main/telomere_detection/sample_outputs/SRR7594465_Yoshimura_et_al/all_patterns_collage.png)). Here it is again with the repeat period and repeat occupancy ranking labelled on Adobe Illustrator ([link](https://github.com/gchchung/Diploscapter_pachys/blob/main/telomere_detection/sample_outputs/SRR7594465_Yoshimura_et_al/all_patterns_collage_labelled_copy.png). Stranded occupancy patterns are in red boxes, and TTAGGC (the known nematode telomeric repeat) is indicated with a red arrow.
 
 ### Scenario 2: Graph occupancies for just one specific repeat sequence
 
