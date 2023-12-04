@@ -86,7 +86,7 @@ A run of the algorithm on _C. elegans_ genomic PacBio reads ([SRR7594465](https:
 
 ```python3 telomere_detection.py SRR7594465.fasta -k 4 -K 20 -n 2000 -r 40```
 
-generated the following ```all_patterns_collage.png``` ([link](https://github.com/gchchung/Diploscapter_pachys/blob/main/telomere_detection/sample_outputs/all_patterns_collage_(from_SRR7594465).png)).
+generated the following ```all_patterns_collage.png``` ([link](https://github.com/gchchung/Diploscapter_pachys/tree/main/telomere_detection/sample_outputs/SRR7594465_Yoshimura_et_all/all_patterns_collage.png)).
 
 
 Here it is again with the repeat period and repeat occupancy ranking labelled on Adobe Illustrator. The patterns TTAGGC, TTAGGCTTAGGC, and TTAGGCTTAGGCTTAGGC are the only ones with **stranded occupancy**, highlighted in the red boxes.
