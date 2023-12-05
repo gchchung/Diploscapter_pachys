@@ -92,6 +92,7 @@ generated an ```all_patterns_collage.png``` ([link](https://github.com/gchchung/
 
 **Figure 2:** Repeat pattern occupancy at the ends of SRR7594465 reads (_C. elegans_ genomic PacBio reads from Yoshimura & al. 2019), with stranded occupancies highlighted (red boxes) and the canonical nematode telomeres (TTAGGC) noted with a red arrowhead.
 
+It is thus reassuring that the 12-mer GGCTTAGGCTTA (2nd most common 12-mer repeat) also shows a stranded occupancy pattern, as it is equivalent to the canonical telomeric repeat [TTAGGC]_2 starting from the first G. Similarly for the 18-mer CTTAGGCTTAGGCTTAGG ([TTAGGC]_3 starting from C). Intriguingly, many patterns similar to TTAGGC_x differing by only one nucleotide, appear to also show stranded occupancy - this could be a result of sequencing error, or bona fide mutations to the telomeric repeats. Finally, other than telomeric repeats, the most common read-end repeat sequences are homopolymers of A or T, followed by homopolymers of G and C, which perhaps indicates these are common _in vivo_ replication intermediates, _in vivo_ repair intermediates, or preferred libary prep end-repair terminating sites.
 
 ### Scenario 2: Graph occupancies for just one specific repeat sequence
 
