@@ -1,7 +1,7 @@
 # A novel telomere detection algorithm using TideHunter and long reads without assembly
 Below you will find a brief description on how to use this novel telomere detection algorithm. Example command:
 
-```python3 telomere_detection.py long_reads.fasta -k 4 -K 20 -n 2000 -r 40```
+```python3 telomere_detection.py long_reads.fasta -k 4 -K 20 -n 6000 -r 40```
 
 ## Background
 The motivation for this algorithm was initially to identify the telomeric repeats of _Diploscapter pachys_ and _Diploscapter coronatus_, which have divergent telomeric sequences different from related nematodes. These two species were re-sequenced using Nanopore and PacBio. We reasoned that if the genomic reads were not intentionally sheared, telomeres should be captured at the 5' and the 3' ends of some reads. Furthermore, if _Diploscapter_ had conventional telomeres maintained by a functional telomerase, these telomeric repeats would have 3 properties usually observed for conventional telomeres:
@@ -49,9 +49,9 @@ The code was written and tested on a personal computer with Intel Core i5-7300HQ
 ## Usage
 
 ### Scenario 1: Graph occupancies for many repeat types to scan for candidate telomeric repeats
-To generate occupancy graphs, covering the first and last 2000 nucleotides, for the top 40 most frequently occurring 4-mer to 20-mer terminal repeats in "long_reads.fasta"
+To generate occupancy graphs covering the first and last 6000 nucleotides of all reads, for the top 40 most frequently occurring 4-mer to 20-mer terminal repeats in "long_reads.fasta"
 
-```python3 telomere_detection.py long_reads.fasta -k 4 -K 20 -n 2000 -r 40```
+```python3 telomere_detection.py long_reads.fasta -k 4 -K 20 -n 6000 -r 40```
 
 **required arguments below:**
 | flag | argument |
@@ -95,8 +95,19 @@ generated an ```all_patterns_collage.png``` ([link](https://github.com/gchchung/
 It is thus reassuring that the 12-mer GGCTTAGGCTTA (2nd most common 12-mer repeat) also shows a stranded occupancy pattern, as it is equivalent to the canonical telomeric repeat [TTAGGC]_2 starting from the first G. Similarly for the 18-mer CTTAGGCTTAGGCTTAGG ([TTAGGC]_3 starting from C). Intriguingly, many patterns similar to TTAGGC_x differing by only one nucleotide appear to also show stranded occupancy - this could be a result of sequencing error, or bona fide mutations to the telomeric repeats. Finally, other than telomeric repeats, the most common read-end repeat sequences are homopolymers of A or T, followed by homopolymers of G and C, which perhaps indicates these are common _in vivo_ replication intermediates, _in vivo_ repair intermediates, or preferred libary prep end-repair terminating sites.
 
 ### Scenario 2: Graph occupancies for just one specific repeat sequence
+To generate the occupancy graphs for a single repeat pattern covering the first and last 6000 nucleotides, run as
+
+```python3 telomere_detection.py long_reads.fasta -s repeat_pattern -n 6000```
+
+The ```-s``` flag allows the user to specify the repeat sequence to graph and will cause the algorithm to ignore ```-n```, ```-k```, ```-K```, and ```-r``` flags.
+
+**Sample output:**
+
+
+Figure 3: Graphing the repeat occupancy pattern of TTAGGC and its reverse complement on  _C. elegans_ genomic PacBio reads using the command ```python3 telomere_detection.py SRR7594465.fasta -s TTAGGC -n 6000```.
 
 ### Scenario 3: Discovery of _Diploscapter_ telomeres
+
 
 ### Scenario 4: Mystery of _Meloidogyne incognita_ telomeres
 
