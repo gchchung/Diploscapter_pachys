@@ -84,7 +84,7 @@ Finally, a collage of all the plots with the same k-value is saved as ```*_patte
 **Sample output:**
 A run of the algorithm on _C. elegans_ genomic PacBio reads ([SRR7594465](https://www.ncbi.nlm.nih.gov/sra/?term=SRR7594465), from Yoshimura _& al._) using the command
 
-```python3 telomere_detection.py SRR7594465.fasta -k 4 -K 20 -n 2000 -r 40```
+```python3 telomere_detection.py SRR7594465.fasta -k 4 -K 20 -n 6000 -r 40```
 
 generated an ```all_patterns_collage.png``` ([link](https://github.com/gchchung/Diploscapter_pachys/blob/main/telomere_detection/sample_outputs/SRR7594465_Yoshimura_et_al/all_patterns_collage.png)), which with the k-mer and repeat occupancy ranking labelled (**Figure 2**), clearly shows stranded occupancy patterns (red boxes). The known nematode telomeric repeats, TTAGGC, is the second-most common 6-mer repeat in the terminal 1kb of reads (indicated bny a red arrowhead and a red box).
 
