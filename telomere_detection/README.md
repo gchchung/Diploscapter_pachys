@@ -26,6 +26,7 @@ The user should then scan the graphed occupancy patterns to determine if the str
 
 ## Getting started
 ### Prerequisites
+#### Manual installation of required packages
 The script is written in Python 3. Required packages include the following:
 - [BioPython](https://biopython.org/wiki/Download) (I/O of sequence files)
 - [pillow](https://pypi.org/project/Pillow/) (for graph .png output) 
