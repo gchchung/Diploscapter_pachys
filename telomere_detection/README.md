@@ -11,12 +11,27 @@ This algorithm was initially created to identify the telomeric repeat motifs of 
 
 Thus, the telomeric repeat pattern can be found by first identifying the most frequent repeat patterns at the ends of the reads, followed by the elimination of patterns that do not satisfy the 3 conditions above.
 
-The bulk of the code was written starting 2020 and revised bit by bit through 2023. We have tested this code on long reads derived from _Diploscapter_ (Chung _& al._ 2024, in preparation), and the following libraries:
+The bulk of the code was written starting 2020 and revised bit by bit through 2023. We have tested this code on long reads derived from _Diploscapter_ (Chung _& al._ 2024, in preparation), and the following libraries deposited in the [Sequence Read Archive](https://www.ncbi.nlm.nih.gov/sra).
 
-| SRA run accesssion | species | reference |
-| ---- | -------- | ------------ |
-| SRR7594465 | _Caenorhabditis elegans_ | Yoshimura _& al. Genome Res. 29,_ 1009–1022 (2019). |
-| SRR7874309 | _Candida albicans_ | Panthee _& al. Genome Biol. Evol. 10,_ 2017–2022 (2018). |
+| SRA run accesssion | species | reference | sequencing platform |
+| ---- | -------- | ------------ | ---------- |
+| SRR7594465 | _Caenorhabditis elegans_ | Yoshimura _& al. Genome Res. 29,_ 1009–1022 (2019). | PacBio |
+| SRR7874309 | _Candida albicans_ | Panthee _& al. Genome Biol. Evol. 10,_ 2017–2022 (2018). | ONT |
+| ERR10466726 | _Kluyveromyces lactis_ | | ONT |
+| ERR3313355 | _Vespa velutina_ | | PacBio |
+| SRR12427674 | Saccharomyces cerevisiae | | ONT |
+| SRR23362189 | _Magnusiomyces capitatus_ | | PacBio |
+| ERR6907800 | _Diabrotica virgifera_ | | PacBio |
+| ERR10812864 | _Poecilus cupreus_ | | PacBio |
+| SRR9852240 to SRR9852244 | _Sitophilus oryzae_ | | ONT |
+| ERR11673226 | _Geotrupes spiniger_ | | PacBio |
+| ERR11843429 | _Hyposter dolosus_ | | PacBio |
+| SRR651333137 | _Diadromus collaris_ | | PacBio |
+| SRR16132310 | _Anthonomus grandis_ | | PacBio |
+| SRR23734611 | _Capsicum chinense_ | | PacBio |
+| SRR26636576 | _Sorghum bicolor_ | | ONT (ultralong) |
+| SRR25177361 and SRR25177362  | _Strongyloides sterocoralis_ | | ONT |
+
 
 
 
