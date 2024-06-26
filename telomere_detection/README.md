@@ -15,10 +15,11 @@ The bulk of the code was written starting 2020 and revised bit by bit through 20
 
 | SRA run accesssion | species | reference |
 | ---- | -------- | ------------ |
-| SRR7594465 | Caenorhabditis elegans | Yoshimura ```& al. Genome Res. 29,``` 1009–1022 (2019).  |
-| ```-K```   | largest repeat period (in bps) to consider. |
-| ```-n```   | the window (in bps) for graphing the occupancy of the repeat patterns. The value of ```n``` should be determined by trial and error to fully cover the lengths of telomeres: we found that 2000 bps were sufficient for _Diploscapter_ telomeres, while _Caenorhabditis_ telomeres required at least 6000 bps. Beware that the algorithm will not take any reads shorter than ```2*n``` into consideration when calculating the repeat occupancy or when graphing. |
-| ```-r```   | top **r**anked: graph only the top ```r``` most frequently occurring repeats in the beginnings and ends of reads.|
+| SRR7594465 | _Caenorhabditis elegans_ | Yoshimura _& al. Genome Res. 29,_ 1009–1022 (2019). |
+| SRR7874309 | _Candida albicans_ | Panthee _& al. Genome Biol. Evol. 10,_ 2017–2022 (2018). |
+
+
+
 Caenorhabditis_ ([Yoshimura _& al._ 2019, _Genome Res_](http://genome.cshlp.org/lookup/pmidlookup?view=long&pmid=31123080)) and _Meloidogyne_ ([Dai _& al._ 2023 _Nat Comm_](https://www.nature.com/articles/s41467-023-42700-w)) nematodes across both Nanopore and PacBio platforms. We expect the algorithm to work on any unsheared Nanopore and PacBio genomic library derived from a species with conventional telomeres maintained by a functional telomerase.
 
 ## How the algorithm works
