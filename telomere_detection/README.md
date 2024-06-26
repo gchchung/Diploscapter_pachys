@@ -1,10 +1,10 @@
 # A novel telomere detection algorithm using TideHunter and long reads without assembly
 Below you will find a brief description on how to use this novel telomere detection algorithm. Example command:
 
-```python3 telomere_detection.py long_reads.fasta -k 4 -K 20 -n 6000 -r 40```
+```python3 TeloSearch-LR.py -f long_reads.fasta -k 4 -K 20 -m 1 -M 100 -n 6000 -t 1000```
 
 ## Background
-The motivation for this algorithm was initially to identify the telomeric repeats of _Diploscapter pachys_ and _Diploscapter coronatus_, which have divergent telomeric sequences different from related nematodes. These two species were re-sequenced using Nanopore and PacBio. We reasoned that if the genomic reads were not intentionally sheared, telomeres should be captured at the 5' and the 3' ends of some reads. Furthermore, if _Diploscapter_ had conventional telomeres maintained by a functional telomerase, these telomeric repeats would have 3 properties usually observed for conventional telomeres:
+This algorithm was initially created to identify the telomeric repeat motifs of _Diploscapter pachys_ and _Diploscapter coronatus_, which have divergent telomeric sequences different from related nematodes. With the availability of Nanopore and PacBio reads for these two species, we reasoned that if the genomic reads were not intentionally sheared, telomeres should be captured at the 5' and the 3' ends of some reads. Furthermore, if _Diploscapter_ had conventional telomeres maintained by a functional telomerase, these telomeric repeats would have 3 properties usually observed for conventional telomeres:
 1. Tandem repeats - they would consist of tandemly repeating sequences (due to telomerase action)
 2. Stranded occupancy - clusters of telomeric repeats will be found almost exclusively at the 3' ends of reads, while clusters of their reverse complement would be found almost exclusiely at the 5’ ends of reads, and
 3. Log-normal occupancy - the occupancy pattern of the repeats over length would resemble an inverted log-normal cumulative curve, which reflects a naturally log-normal distribution of telomere lengths.
