@@ -1,7 +1,7 @@
 # A novel telomere detection algorithm using TideHunter and long reads without assembly
 Below you will find a brief description on how to use this novel telomere detection algorithm. Example command:
 
-```python3 TeloSearch-LR.py -f long_reads.fasta -k 4 -K 20 -m 1 -M 100 -n 6000 -t 1000```
+```python3 TeloSearch-LR.py -f long_reads.fasta -k 4 -K 20 -t 1000 -m 1 -M 100 -n 6000```
 
 ## Background
 This algorithm was initially created to identify the telomeric repeat motifs of _Diploscapter pachys_ and _Diploscapter coronatus_, which have divergent telomeric sequences different from related nematodes. With the availability of Nanopore and PacBio reads for these two species, we reasoned that if the genomic reads were not intentionally sheared, telomeres should be captured at the 5' and the 3' ends of some reads. Furthermore, if _Diploscapter_ had conventional telomeres maintained by a functional telomerase, these telomeric repeats would have 3 properties usually observed for conventional telomeres:
@@ -11,7 +11,15 @@ This algorithm was initially created to identify the telomeric repeat motifs of 
 
 Thus, the telomeric repeat pattern can be found by first identifying the most frequent repeat patterns at the ends of the reads, followed by the elimination of patterns that do not satisfy the 3 conditions above.
 
-The bulk of the code was written starting 2020 and revised bit by bit through 2023. We have tested this code on long reads derived from _Diploscapter_ (Chung _& al._ 2024, in preparation), _Caenorhabditis_ ([Yoshimura _& al._ 2019, _Genome Res_](http://genome.cshlp.org/lookup/pmidlookup?view=long&pmid=31123080)) and _Meloidogyne_ ([Dai _& al._ 2023 _Nat Comm_](https://www.nature.com/articles/s41467-023-42700-w)) nematodes across both Nanopore and PacBio platforms. We expect the algorithm to work on any unsheared Nanopore and PacBio genomic library derived from a species with conventional telomeres maintained by a functional telomerase.
+The bulk of the code was written starting 2020 and revised bit by bit through 2023. We have tested this code on long reads derived from _Diploscapter_ (Chung _& al._ 2024, in preparation), and the following libraries:
+
+| SRA run accesssion | species | reference |
+| ---- | -------- | ------------ |
+| SRR7594465 | Caenorhabditis elegans | Yoshimura ```& al. Genome Res. 29,``` 1009–1022 (2019).  |
+| ```-K```   | largest repeat period (in bps) to consider. |
+| ```-n```   | the window (in bps) for graphing the occupancy of the repeat patterns. The value of ```n``` should be determined by trial and error to fully cover the lengths of telomeres: we found that 2000 bps were sufficient for _Diploscapter_ telomeres, while _Caenorhabditis_ telomeres required at least 6000 bps. Beware that the algorithm will not take any reads shorter than ```2*n``` into consideration when calculating the repeat occupancy or when graphing. |
+| ```-r```   | top **r**anked: graph only the top ```r``` most frequently occurring repeats in the beginnings and ends of reads.|
+Caenorhabditis_ ([Yoshimura _& al._ 2019, _Genome Res_](http://genome.cshlp.org/lookup/pmidlookup?view=long&pmid=31123080)) and _Meloidogyne_ ([Dai _& al._ 2023 _Nat Comm_](https://www.nature.com/articles/s41467-023-42700-w)) nematodes across both Nanopore and PacBio platforms. We expect the algorithm to work on any unsheared Nanopore and PacBio genomic library derived from a species with conventional telomeres maintained by a functional telomerase.
 
 ## How the algorithm works
 Much of our algorithm depends on the TideHunter program written by Yan Gao, Bo Liu, Yadong Wang, and Yi Xing ([Gao & al. 2019 _Bioinformatics_](https://academic.oup.com/bioinformatics/article/35/14/i200/5529224)). Our algorithm first takes a collection of long reads (from Oxford Nanopore or PacBio sequencing platforms) and partitions each read into two - the first 1000 bps and the last 1000 bps. TideHunter is run on these partitions to detect any tandem repeats of length ```k```. Next, our algorithm reads the TideHunter output and ranks the repeated sequences together with their reverse complements based on occupancy (saved as *_TideHunter_parser_OUTPUT_CONDENSED.txt). This ranking step also merges classes of repeat sequences that are circularly permuted (repeats of ATCG are considered the same class as repeats of TCGA, CGAT and GATC).
