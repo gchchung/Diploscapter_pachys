@@ -15,20 +15,18 @@ The bulk of the code was written starting 2020 and revised bit by bit through 20
 
 | SRA run accesssion | species | reference | sequencing platform |
 | ---- | -------- | ------------ | ---------- |
-| SRR7594465 | _Caenorhabditis elegans_ | Yoshimura _& al. Genome Res. 29,_ 1009–1022 (2019). | PacBio |
-| SRR7874309 | _Candida albicans_ | Panthee _& al. Genome Biol. Evol. 10,_ 2017–2022 (2018). | ONT |
+| SRR7594465 | _Caenorhabditis elegans_ | Yoshimura _& al. Genome Res 29,_ 1009–1022 (2019) | PacBio |
+| SRR7874309 | _Candida albicans_ | Panthee _& al. Genome Biol Evol 10,_ 2017–2022 (2018) | ONT |
 | ERR10466726 | _Kluyveromyces lactis_ | | ONT |
-| ERR3313355 | _Vespa velutina_ | | PacBio |
-| SRR12427674 | _Saccharomyces cerevisiae_ | | ONT |
+| ERR3313355 | _Vespa velutina_ | Darwin Tree of Life Project Consortium. _Proc Natl Acad Sci 119,_ e2115642118 (2022) | PacBio |
+| SRR12427674 | _Saccharomyces cerevisiae_ | Barbitoff _& al. G3 11,_ jkab029 (2021) | ONT |
 | SRR23362189 | _Magnusiomyces capitatus_ | | PacBio |
-| ERR6907800 | _Diabrotica virgifera_ | | PacBio |
-| ERR10812864 | _Poecilus cupreus_ | | PacBio |
-| SRR9852240 to SRR9852244 | _Sitophilus oryzae_ | | ONT |
-| ERR11673226 | _Geotrupes spiniger_ | | PacBio |
-| ERR11843429 | _Hyposter dolosus_ | | PacBio |
-| SRR651333137 | _Diadromus collaris_ | | PacBio |
-| SRR16132310 | _Anthonomus grandis_ | | PacBio |
-| SRR23734611 | _Capsicum chinense_ | | PacBio |
+| ERR6907800 | _Diabrotica virgifera_ | [Pest Genomics Initiative - Diabrotica virgifera](https://www.pestgenomics.org/species/diabrotica-virgifera) | PacBio |
+| ERR10812864 | _Poecilus cupreus_ | Darwin Tree of Life Project Consortium. _Proc Natl Acad Sci 119,_ e2115642118 (2022) | PacBio |
+| SRR9852240 to SRR9852244 | _Sitophilus oryzae_ | Parisot _& al. BMC Biol._ 19, 241 (2021) | ONT |
+| ERR11673226 | _Geotrupes spiniger_ | Darwin Tree of Life Project Consortium. _Proc Natl Acad Sci 119,_ e2115642118 (2022) | PacBio |
+| ERR11843429 | _Hyposter dolosus_ | Darwin Tree of Life Project Consortium. _Proc Natl Acad Sci 119,_ e2115642118 (2022) | PacBio |
+| SRR23734611 | _Capsicum chinense_ | Liu _& al. Nat Commun 14,_ 5487 (2023). | PacBio |
 | SRR26636576 | _Sorghum bicolor_ | | ONT (ultralong) |
 | SRR25177361 and SRR25177362  | _Strongyloides sterocoralis_ | | ONT |
 
