@@ -19,7 +19,7 @@ The bulk of the code was written starting 2020 and revised bit by bit through 20
 | SRR7874309 | _Candida albicans_ | Panthee _& al. Genome Biol. Evol. 10,_ 2017–2022 (2018). | ONT |
 | ERR10466726 | _Kluyveromyces lactis_ | | ONT |
 | ERR3313355 | _Vespa velutina_ | | PacBio |
-| SRR12427674 | Saccharomyces cerevisiae | | ONT |
+| SRR12427674 | _Saccharomyces cerevisiae_ | | ONT |
 | SRR23362189 | _Magnusiomyces capitatus_ | | PacBio |
 | ERR6907800 | _Diabrotica virgifera_ | | PacBio |
 | ERR10812864 | _Poecilus cupreus_ | | PacBio |
