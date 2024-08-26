@@ -31,10 +31,6 @@ The bulk of the code was written starting 2020 and revised bit by bit through 20
 | SRR25177361 and SRR25177362  | _Strongyloides sterocoralis_ | | ONT |
 
 
-
-
-Caenorhabditis_ ([Yoshimura _& al._ 2019, _Genome Res_](http://genome.cshlp.org/lookup/pmidlookup?view=long&pmid=31123080)) and _Meloidogyne_ ([Dai _& al._ 2023 _Nat Comm_](https://www.nature.com/articles/s41467-023-42700-w)) nematodes across both Nanopore and PacBio platforms. We expect the algorithm to work on any unsheared Nanopore and PacBio genomic library derived from a species with conventional telomeres maintained by a functional telomerase.
-
 ## How the algorithm works
 Much of our algorithm depends on the TideHunter program written by Yan Gao, Bo Liu, Yadong Wang, and Yi Xing ([Gao & al. 2019 _Bioinformatics_](https://academic.oup.com/bioinformatics/article/35/14/i200/5529224)). Our algorithm first takes a collection of long reads (from Oxford Nanopore or PacBio sequencing platforms) and partitions each read into two - the first 1000 bps and the last 1000 bps. TideHunter is run on these partitions to detect any tandem repeats of length ```k```. Next, our algorithm reads the TideHunter output and ranks the repeated sequences together with their reverse complements based on occupancy (saved as *_TideHunter_parser_OUTPUT_CONDENSED.txt). This ranking step also merges classes of repeat sequences that are circularly permuted (repeats of ATCG are considered the same class as repeats of TCGA, CGAT and GATC).
 
@@ -79,11 +75,12 @@ To generate occupancy graphs covering the first and last 6000 nucleotides of all
 **required arguments below:**
 | flag | argument |
 | ---- | -------- |
-| input | FASTA file containing the long reads. |
+| ```-f``` | FASTA file containing the long reads. |
 | ```-k```   | smallest repeat period (in bps) to consider. |
 | ```-K```   | largest repeat period (in bps) to consider. |
-| ```-n```   | the window (in bps) for graphing the occupancy of the repeat patterns. The value of ```n``` should be determined by trial and error to fully cover the lengths of telomeres: we found that 2000 bps were sufficient for _Diploscapter_ telomeres, while _Caenorhabditis_ telomeres required at least 6000 bps. Beware that the algorithm will not take any reads shorter than ```2*n``` into consideration when calculating the repeat occupancy or when graphing. |
-| ```-r```   | top **r**anked: graph only the top ```r``` most frequently occurring repeats in the beginnings and ends of reads.|
+| ```-t```   | the terminal region (in bps) to consider while ranking repeat motifs. |
+| ```-n```   | the window (in bps) for graphing the occupancy of the repeat patterns. The value of ```n``` should be determined by trial and error to fully cover the lengths of telomeres. |
+| ```-m``` and ```-M```   | graph the occupancy patterns from the m-th most frequent motif to the M-th most frequent motif. |
 
 **Output generated:**
 Intermediate files (TideHunter outputs) are saved in the current folder. Final output files are further organized by repeat pattern length ```k``` in folders with the name ```*_k-mers```. Repeat-pattern-specific files adopt this format in their names:
@@ -105,34 +102,7 @@ Intermediate files (TideHunter outputs) are saved in the current folder. Final o
 Finally, a collage of all the plots with the same k-value is saved as ```*_patterns_collage.png``` (or .svg) in individual k-mer folders and a collage of all plots is saved as ```all_patterns_collage.png``` (or .svg) in the current folder. The collages show the patterns by repeat occupancy rank (top-ranked at the top, r-th ranked at the bottom), and repeat period (```k``` at the left, ```K``` at the right)
 
 **Sample output:**
-A run of the algorithm on _C. elegans_ genomic PacBio reads ([SRR7594465](https://www.ncbi.nlm.nih.gov/sra/?term=SRR7594465), from Yoshimura _& al._) using the command
 
-```python3 telomere_detection.py SRR7594465.fasta -k 4 -K 20 -n 6000 -r 40```
-
-generated an ```all_patterns_collage.png``` ([link](https://github.com/gchchung/Diploscapter_pachys/blob/main/telomere_detection/sample_outputs/SRR7594465_Yoshimura_et_al/all_patterns_collage.png)), which with the k-mer and repeat occupancy ranking labelled (**Figure 2**), clearly shows stranded occupancy patterns (red boxes). The known nematode telomeric repeats, TTAGGC, is the second-most common 6-mer repeat in the terminal 1kb of reads (indicated bny a red arrowhead and a red box).
-
-![all_patterns_collage_labelled_copy](https://github.com/gchchung/Diploscapter_pachys/assets/69369525/01f98aa2-b5d2-456a-8720-004ce11d67f4)
-
-**Figure 2:** Repeat pattern occupancy at the ends of SRR7594465 reads (_C. elegans_ genomic PacBio reads from Yoshimura & al. 2019), with stranded occupancies highlighted (red boxes) and the canonical nematode telomeres (TTAGGC) noted with a red arrowhead.
-
-It is thus reassuring that the 12-mer GGCTTAGGCTTA (2nd most common 12-mer repeat) also shows a stranded occupancy pattern, as it is equivalent to the canonical telomeric repeat [TTAGGC]_2 starting from the first G. Similarly for the 18-mer CTTAGGCTTAGGCTTAGG ([TTAGGC]_3 starting from C). Intriguingly, many patterns similar to TTAGGC_x differing by only one nucleotide appear to also show stranded occupancy - this could be a result of sequencing error, or bona fide mutations to the telomeric repeats. Finally, other than telomeric repeats, the most common read-end repeat sequences are homopolymers of A or T, followed by homopolymers of G and C, which perhaps indicates these are common _in vivo_ replication intermediates, _in vivo_ repair intermediates, or preferred libary prep end-repair terminating sites.
-
-### Scenario 2: Graph occupancies for just one specific repeat sequence
-To generate the occupancy graphs for a single repeat pattern covering the first and last 6000 nucleotides, run as
-
-```python3 telomere_detection.py long_reads.fasta -s repeat_pattern -n 6000```
-
-The ```-s``` flag allows the user to specify the repeat sequence to graph and will cause the algorithm to ignore ```-n```, ```-k```, ```-K```, and ```-r``` flags.
-
-**Sample output:**
-
-
-Figure 3: Graphing the repeat occupancy pattern of TTAGGC and its reverse complement on  _C. elegans_ genomic PacBio reads using the command ```python3 telomere_detection.py SRR7594465.fasta -s TTAGGC -n 6000```.
-
-### Scenario 3: Discovery of _Diploscapter_ telomeres
-
-
-### Scenario 4: Mystery of _Meloidogyne incognita_ telomeres
 
 
 ## References
