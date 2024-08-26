@@ -1,7 +1,7 @@
 # A novel telomere detection algorithm using TideHunter and long reads without assembly
 Below you will find a brief description on how to use this novel telomere detection algorithm. Example command:
 
-```python3 TeloSearch-LR.py -f long_reads.fasta -k 4 -K 20 -t 1000 -m 1 -M 100 -n 6000```
+```python3 TeloSearchLR.py -f long_reads.fasta -k 4 -K 20 -t 1000 -m 1 -M 100 -n 6000```
 
 ## Background
 This algorithm was initially created to identify the telomeric repeat motifs of _Diploscapter pachys_ and _Diploscapter coronatus_, which have divergent telomeric sequences different from related nematodes. With the availability of Nanopore and PacBio reads for these two species, we reasoned that if the genomic reads were not intentionally sheared, telomeres should be captured at the 5' and the 3' ends of some reads. Furthermore, if _Diploscapter_ had conventional telomeres maintained by a functional telomerase, these telomeric repeats would have 3 properties usually observed for conventional telomeres:
