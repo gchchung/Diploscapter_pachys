@@ -78,7 +78,7 @@ To generate occupancy graphs covering the first and last 6000 nucleotides of all
 | ```-f``` | FASTA file containing the long reads. |
 | ```-k```   | smallest repeat period (in bps) to consider. |
 | ```-K```   | largest repeat period (in bps) to consider. |
-| ```-t```   | the terminal region (in bps) to consider while ranking repeat motifs. |
+| ```-t```   | the terminal region (in bps) to consider while ranking repeat motifs. Default = 1000 |
 | ```-n```   | the window (in bps) for graphing the occupancy of the repeat patterns. The value of ```n``` should be determined by trial and error to fully cover the lengths of telomeres. |
 | ```-m``` and ```-M```   | graph the occupancy patterns from the m-th most frequent motif to the M-th most frequent motif. |
 
