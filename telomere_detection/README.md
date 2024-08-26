@@ -70,7 +70,7 @@ The code was written and tested on a personal computer with Intel Core i5-7300HQ
 ### Scenario 1: Graph occupancies for many repeat types to scan for candidate telomeric repeats
 To generate occupancy graphs covering the first and last 6000 nucleotides of all reads, for the top 40 most frequently occurring 4-mer to 20-mer terminal repeats in "long_reads.fasta"
 
-```python3 telomere_detection.py long_reads.fasta -k 4 -K 20 -n 6000 -r 40```
+```python3 telomere_detection.py long_reads.fasta -k 4 -K 20 -n 6000 -m 1 -M 40```
 
 **required arguments below:**
 | flag | argument |
