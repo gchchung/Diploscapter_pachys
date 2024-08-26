@@ -1,4 +1,4 @@
-# A novel telomere detection algorithm using TideHunter and long reads without assembly
+# TeloSearch-LR: a novel telomere detection algorithm using long sequencing reads without assembly
 Below you will find a brief description on how to use this novel telomere detection algorithm. Example command:
 
 ```python3 TeloSearchLR.py -f long_reads.fasta -k 4 -K 20 -t 1000 -m 1 -M 100 -n 6000```
